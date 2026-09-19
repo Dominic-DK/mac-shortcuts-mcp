@@ -1,26 +1,52 @@
 {
   "name": "mac-shortcuts-mcp",
-  "version": "0.1.0",
+  "mcpName": "io.github.Dominic-DK/mac-shortcuts-mcp",
+  "version": "0.1.1",
   "description": "Let any AI agent read your Mac — Calendar, Reminders, Notes, Contacts, Clipboard, Location, Weather — through Apple Shortcuts. Read-only, local, no account.",
   "license": "MIT",
   "homepage": "https://github.com/Dominic-DK/mac-shortcuts-mcp",
-  "repository": { "type": "git", "url": "git+https://github.com/Dominic-DK/mac-shortcuts-mcp.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dominic-DK/mac-shortcuts-mcp.git"
+  },
   "author": "Askew (https://askew.my)",
   "keywords": [
-    "mcp", "model-context-protocol", "macos", "mac", "shortcuts",
-    "calendar", "contacts", "notes", "reminders", "claude", "agent", "read-only"
+    "mcp",
+    "model-context-protocol",
+    "macos",
+    "mac",
+    "shortcuts",
+    "calendar",
+    "contacts",
+    "notes",
+    "reminders",
+    "claude",
+    "agent",
+    "read-only"
   ],
   "type": "module",
-  "bin": { "mac-shortcuts-mcp": "dist/cli.js" },
+  "bin": {
+    "mac-shortcuts-mcp": "dist/cli.js"
+  },
   "main": "dist/index.js",
-  "files": ["dist", "recipes", "action-catalog.json", "README.md", "LICENSE"],
-  "os": ["darwin"],
-  "engines": { "node": ">=22" },
+  "files": [
+    "dist",
+    "recipes",
+    "action-catalog.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "os": [
+    "darwin"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx src/cli.ts",
     "test": "tsx --test --test-force-exit --test-timeout=60000 test/*.test.ts",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",

@@ -5,7 +5,7 @@ import { runWithRetry, list, assertMac, ShortcutsError } from "./shortcuts.js";
 import { bundledRecipes, installAll, installed, type RecipeMeta } from "./install.js";
 import { search as searchActions, render as renderAction, actions as allActions } from "./catalog.js";
 
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 
 /**
  * mac-shortcuts-mcp — 에이전트가 **이 맥을 읽게** 해 주는 MCP 서버.
