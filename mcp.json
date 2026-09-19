@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mac": {
+      "command": "npx",
+      "args": ["-y", "mac-shortcuts-mcp"]
+    }
+  }
+}
