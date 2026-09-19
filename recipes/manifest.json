@@ -1,0 +1,160 @@
+{
+ "version": 1,
+ "recipes": [
+  {
+   "id": "calendar.list",
+   "shortcutName": "일정 조회",
+   "file": "calendar-list.plist",
+   "title": "일정 조회",
+   "oneLine": "\"내일 일정 뭐 있어?\" — 기간 안의 일정을 시간·제목·장소로 가져와요.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.filter.calendarevents",
+    "is.workflow.actions.count",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.text.combine",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "reminders.list",
+   "shortcutName": "미리 알림 조회",
+   "file": "reminders-list.plist",
+   "title": "미리 알림 조회",
+   "oneLine": "안 끝난 할 일을 마감 순으로 가져와요(최대 50건). 오늘·지난 것 골라내기는 에이전트 몫.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.filter.reminders",
+    "is.workflow.actions.count",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.text.combine",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "notes.find",
+   "shortcutName": "메모 찾기",
+   "file": "notes-find.plist",
+   "title": "메모 찾기",
+   "oneLine": "제목이나 본문에 낱말이 든 메모를 최근 수정순으로, 본문째 가져와요.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.filter.notes",
+    "is.workflow.actions.count",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.text.combine",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "contacts.find",
+   "shortcutName": "연락처 찾기",
+   "file": "contacts-find.plist",
+   "title": "연락처 찾기",
+   "oneLine": "이름에 낱말이 든 연락처의 전화·이메일·회사를 가져와요(최대 20건).",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.filter.contacts",
+    "is.workflow.actions.count",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.repeat.each",
+    "is.workflow.actions.text.combine",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "clipboard.get",
+   "shortcutName": "클립보드 읽기",
+   "file": "clipboard-get.plist",
+   "title": "클립보드 읽기",
+   "oneLine": "폰에서 복사한 걸 에이전트가 읽어요.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.getclipboard",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "device.status",
+   "shortcutName": "기기 상태",
+   "file": "device-status.plist",
+   "title": "기기 상태",
+   "oneLine": "기기 이름과 배터리 잔량을 에이전트가 물어봐요.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.getbatterylevel",
+    "is.workflow.actions.getdevicedetails",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "location.get",
+   "shortcutName": "현재 위치",
+   "file": "location-get.plist",
+   "title": "현재 위치",
+   "oneLine": "지금 어디인지 주소와 좌표를 에이전트에게.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.getcurrentlocation",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "weather.now",
+   "shortcutName": "현재 날씨",
+   "file": "weather-now.plist",
+   "title": "현재 날씨",
+   "oneLine": "폰 위치의 지금 날씨를 에이전트에게.",
+   "verified": true,
+   "actions": [
+    "is.workflow.actions.weather.currentconditions",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  },
+  {
+   "id": "music.now",
+   "shortcutName": "재생 중",
+   "file": "music-now.plist",
+   "title": "재생 중",
+   "oneLine": "지금 듣고 있는 곡의 제목·아티스트·앨범.",
+   "verified": false,
+   "actions": [
+    "is.workflow.actions.getcurrentsong",
+    "is.workflow.actions.gettext",
+    "is.workflow.actions.output"
+   ],
+   "inputExample": null,
+   "outputExample": null
+  }
+ ]
+}

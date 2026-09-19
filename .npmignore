@@ -1,0 +1,6 @@
+node_modules
+src
+test
+scripts
+tsconfig.json
+*.tsbuildinfo
