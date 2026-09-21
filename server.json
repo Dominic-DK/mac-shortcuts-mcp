@@ -3,7 +3,7 @@
   "name": "io.github.Dominic-DK/mac-shortcuts-mcp",
   "title": "Mac Shortcuts — read your Mac from any agent",
   "description": "Read your Mac's Calendar, Reminders, Notes, Contacts and more via Shortcuts. Read-only, local.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://github.com/Dominic-DK/mac-shortcuts-mcp",
   "repository": {
     "url": "https://github.com/Dominic-DK/mac-shortcuts-mcp",
@@ -15,7 +15,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "mac-shortcuts-mcp",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

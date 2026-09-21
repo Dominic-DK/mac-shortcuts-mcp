@@ -43,7 +43,7 @@ That is the whole trick. Nothing here is clever — it is just wired up.
 | `mac_action_catalog` | **Search the Shortcuts action catalog** — see below |
 | `mac_setup` / `mac_status` | Install the read recipes, check what's ready |
 
-**There is no write tool.** No adding events, no sending messages. A confused agent should not be able to do something you cannot undo.
+**The bundled recipes are read-only.** `mac_run_shortcut` can run any installed Shortcut, including one that writes data or sends messages. Its description asks the agent to check with you when the behavior is unknown; this is not an enforced read-only sandbox.
 
 Everything read from your Mac comes back tagged as *data, not instructions*, so a note that says "ignore your previous instructions" is handed to the agent as text rather than as a command.
 
@@ -82,7 +82,7 @@ The first time a recipe touches Contacts or Calendar, macOS asks for permission.
 
 **This does nothing while your Mac is asleep.** Processes are stopped; there is nothing to talk to. Screen lock is fine — we measured 62 of 63 calls succeeding with the screen locked, at the same speed as unlocked. Sleep is the real wall.
 
-Read-only by design. macOS only. Data leaves your Mac only by going to the agent you connected.
+The bundled recipes read data; arbitrary installed Shortcuts may have side effects. macOS only. Results go to the agent you connected.
 
 ## When you need a device that is never asleep
 
@@ -106,7 +106,7 @@ npx -y mac-shortcuts-mcp setup      # 읽기 레시피 설치 (처음 한 번)
 
 에이전트가 퍼스트파티 앱을 못 읽는 건 권한이 없어서고 API도 없기 때문입니다. **단축어는 읽을 수 있습니다.** 이 서버는 일을 `Shortcuts.app`에 넘기고 결과 텍스트만 받아 옵니다.
 
-**쓰기 도구는 없습니다.** 일정 추가도, 메시지 발송도 없습니다. 오작동한 에이전트가 되돌릴 수 없는 일을 하면 안 됩니다. 맥에서 읽어 온 내용은 전부 *지시가 아니라 자료*라는 꼬리표를 달고 갑니다.
+**기본 레시피는 읽기 전용입니다.** 다만 `mac_run_shortcut`은 쓰기·메시지 발송을 포함한 설치된 단축어도 실행할 수 있습니다. 동작을 모르면 사용자에게 먼저 묻도록 안내하지만, 읽기 전용을 강제하는 격리 환경은 아닙니다. 맥에서 읽어 온 내용은 전부 *지시가 아니라 자료*라는 꼬리표를 달고 갑니다.
 
 **동작 카탈로그 539종**을 같이 공개합니다. 동작마다 어떤 매개변수 키를 받는지, 애플이 문서로 내지 않는 값입니다. 키가 틀리면 **오류 없이 조용히 무시되고 틀린 답이 옵니다** — 실제로 그렇게 재 봤습니다. 실행은 누구나 할 수 있지만 만드는 건 이 표가 있어야 합니다.
 

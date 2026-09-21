@@ -1,7 +1,7 @@
 {
   "name": "mac-shortcuts-mcp",
   "mcpName": "io.github.Dominic-DK/mac-shortcuts-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Let any AI agent read your Mac — Calendar, Reminders, Notes, Contacts, Clipboard, Location, Weather — through Apple Shortcuts. Read-only, local, no account.",
   "license": "MIT",
   "homepage": "https://github.com/Dominic-DK/mac-shortcuts-mcp",
